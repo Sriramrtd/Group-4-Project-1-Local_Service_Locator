@@ -81,7 +81,69 @@
   
 
 <?php
-echo "provider details will be displayed here";
+include 'config.php';
+
+session_start();
+$un=$_SESSION["un"];
+$usertable = "home";
+
+if($conn->connect_error)
+{
+die("Connection failed" .$con->connect_error);}
+
+
+  //$con=mysql_connect($servername, $username, $password) OR DIE ("Unable to connect to database! Please try again later.");
+           // mysql_select_db($dbname);
+	    $query = "SELECT * from service";
+	    $retval = mysqli_query($conn,$query);
+	    if(! $retval )
+	    {
+	    echo 'No data'.mysqli_error();
+	    }
+	    else 
+	    {
+				$rows = array();
+				while($row = mysqli_fetch_assoc($retval)) 
+				{
+				//	$rows[] = array('Id' => $row
+
+//['Id'],'Name' => $row['Name'],'Deep' => $row['Deep'],'videoid' => $row['videoid']);
+
+
+              echo  "
+              <table>
+              <tr>
+              <td>
+              <img src='images/".$row['pic']."' style='width:100px'/>
+              </td>
+
+              <td>
+              
+              
+              
+              <div class='panel panel-default'>
+                        <div class='panel-body'>
+                        <h4>Customer Id: .".$row['Id']."
+                         Name : ".$row['name']."
+                          Phone : ".$row['phone']."
+                         
+                          <p>Email : .".$row['email']."
+                        <p>Address : ".$row['loc']."</p>
+                      <p>Services Providing : ".$row['type']."</p>
+                       </h4>
+                        </div>
+                    </div>
+                    </td>
+                    </tr>
+                    </table>
+                    ";
+
+
+				}
+			
+	  }
+
+
 ?>
         </div>
         

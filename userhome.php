@@ -65,8 +65,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
        
-       <li><a href="#">Services</a></li>
-        <li><a href="#">My Booking</a></li>
+       <li><a href="services.html">Services</a></li>
+        <li><a href="mybookings.php">My Booking</a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">

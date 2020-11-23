@@ -57,7 +57,7 @@
    
       
             
-       <li><a href="#">My Feedbacks</a></li>
+       <li><a href="feedbacks.php">My Feedbacks</a></li>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -79,7 +79,56 @@
   
 
 <?php
-echo "service providers details will be provided here";
+include 'config.php';
+
+session_start();
+$un=$_SESSION["un"];
+$usertable = "home";
+
+if($conn->connect_error)
+{
+die("Connection failed" .$con->connect_error);}
+
+
+  //$con=mysql_connect($servername, $username, $password) OR DIE ("Unable to connect to database! Please try again later.");
+           // mysql_select_db($dbname);
+	    $query = "SELECT * from book where email='$un'";
+	    $retval = mysqli_query($conn,$query);
+	    if(! $retval )
+	    {
+	    echo 'No data'.mysqli_error();
+	    }
+	    else 
+	    {
+				$rows = array();
+				while($row = mysqli_fetch_assoc($retval)) 
+				{
+				//	$rows[] = array('Id' => $row
+
+//['Id'],'Name' => $row['Name'],'Deep' => $row['Deep'],'videoid' => $row['videoid']);
+
+
+              echo  "<div class='panel panel-default'>
+                        <div class='panel-body'>
+                        <h4>Requested Id: .".$row['Id']."</h4>
+                        <h4>Customer name : ".$row['bname']."</h4>
+                        <p>Address : ".$row['hso']."</p>
+                         <p>".$row['address']."</p>
+                         
+                          <p>Status : .".$row['status']."</p>
+                        
+                        <a href='updateservice.php?s=".$row['Id']."' ><input type='button' value='Accept' /></a>
+                       
+                       
+                        </div>
+                    </div>";
+
+
+				}
+			//	echo json_encode(array('data'=>$rows));
+	  }
+
+
 ?>
         </div>
         

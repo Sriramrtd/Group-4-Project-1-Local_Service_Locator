@@ -77,11 +77,68 @@
     <div class="row">
         <div class="col-xs-12">
                
-  <h3>Customer Details</h3>
+  <h3>Service Provider Details</h3>
   
 
 <?php
-echo "customer details will be displayed here";
+include 'config.php';
+
+session_start();
+$un=$_SESSION["un"];
+$usertable = "home";
+
+if($conn->connect_error)
+{
+die("Connection failed" .$con->connect_error);}
+
+
+  
+	    $query = "SELECT * from customer";
+	    $retval = mysqli_query($conn,$query);
+	    if(! $retval )
+	    {
+	    echo 'No data'.mysqli_error();
+	    }
+	    else 
+	    {
+				$rows = array();
+				while($row = mysqli_fetch_assoc($retval)) 
+				{
+				
+
+
+              echo  "
+              <table>
+              <tr>
+              <td>
+              <img src='images/".$row['photo']."' style='width:100px'/>
+              </td>
+
+              <td>
+              <div class='panel panel-default'>
+              <div class='panel-body'>
+              <h4>Customer Id: .".$row['Id']."
+               Name : ".$row['name']."
+                Phone : ".$row['phone']."
+               
+                <p>Email : .".$row['email']."
+              <p>Address : ".$row['loc']."</p>
+            
+             </h4>
+              </div>
+          </div>
+              </td>
+              </tr>
+              </table>"
+              
+             ;
+
+
+				}
+			
+	  }
+
+
 ?>
         </div>
         
