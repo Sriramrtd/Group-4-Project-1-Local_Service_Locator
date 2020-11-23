@@ -92,9 +92,14 @@
                   <div class="form" style="width:100%;background:#013fa2;">
                                      <h2 style="color:white;text-align:center;padding:20px">Service Provider Registration</h2>
                                     </div>
-                  <form action="serviceregister.php" method="POST" role="form">
+                  <form action="serviceregister.php" method="POST" role="form" enctype="multipart/form-data">
   
 
+
+                    <div class="form-group">
+                      <label for="file">Profile Image</label>
+                      <input type="file" name="file" class="form-control" id="file">
+                  </div>
      <div class="form-group" >
         <label for="name" style="color:white;font-weight:bold">Name</label>
         <input type="text" name="name" class="form-control" maxlength="12"
@@ -105,10 +110,12 @@
         <label for="name" style="color:white;font-weight:bold">Location</label>
         <select class="form-control" 
         id="loc" name="loc">
-            <option value="Gudivada">Gudivada</option>
-            <option value="Vijayawada">Vijayawada</option>
-            <option value="Machilipatnam">Machilipatnam</option>
-            <option value="Gudlavaleru">Gudlavaleru</option>
+            <option value="Memorial avenue">Memorial avenue</option>
+            <option value="Algoma Street">Algoma Street</option>
+            <option value="Thunder center">Thunder center</option>
+            <option value="Red River Road">Red River Road</option>
+            <option value="Arthur Street">Arthur Street</option>
+            <option value="James Street">James Street</option>
         </select>
     </div>
     
@@ -116,19 +123,13 @@
         <label for="type" style="color:white;font-weight:bold">Type Of Work</label>
         <select class="form-control" 
         id="type" name="type">
-             <option value="Laptop">Laptop</option>
-            <option value="Air Cooler">Air Cooler</option>
-            <option value="Washing Machine">Washing Machine</option>
-             <option value="Air Conditioner">Air Conditioner</option>
-            <option value="Television">Television</option>
-            <option value="Cleaning Services">Cleaning Services</option>
+             <option value="Car Rental">Car Rental</option>
+            <option value="Mobile repairs">Mobile repairs</option>
+            <option value="Home Depot">Home Depot</option>
+             <option value="Laundromat">Laundromat</option>
+            <option value="Home Hardware">Home Hardware</option>
+            <option value="Lowes">Lowes</option>
             
-             <option value="Water Purifier">Water Purifier</option>
-            <option value="Microwave oven">Microwave oven</option>
-            <option value="Gas stove">Gas stove</option>
-             <option value="Geyser">Geyser</option>
-           
-           
         </select>
     </div>
     
@@ -232,7 +233,7 @@ function placeMarker(location) {
     </div>
     </div>
 
-    <button type="submit" name="submit"  class="btn btn-primary form-control"><b>Submit</b></button>
+    <button class="btn btn-success form-control" type="submit" name="submit" value="submit"><b>Submit</b></button>
 </form>
 
               </div>
@@ -256,5 +257,44 @@ function placeMarker(location) {
   
 </div>
 
+
+
+<div style="width: 100%;height: 200px;background-color:#013fa2;color: #fff;margin-top: 100px;">
+
+  <div class="container">
+  
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-md-6">
+        <h2>About </h2>
+        <p>
+          The provision of services between a service provider and a company is typically governed by a service agreement. Examples of potential service providers for a company are advisors, individual consultants, law firms, design shops and investment banks.
+        </p>
+      </div>
+  
+      <div class="col-md-6">
+        <h2>Contact </h2>
+        <ul>
+          <li>
+                 Address: Tunder Bay,
+          </li>
+           <li>
+            Tunder Bay, Ontarion, Canada
+          </li>
+           <li>
+            Phone: +91 9898989898
+          </li>
+           <li>
+             Email: ISPService102@gmail.com
+          </li>
+          
+          
+      </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+  </div>
+  
 </body>
 </html>
