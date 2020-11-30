@@ -77,7 +77,7 @@
     <div class="row">
         <div class="col-xs-12">
                
-  <h3>Service Provider Details</h3>
+  <h3>Customer Details</h3>
   
 
 <?php

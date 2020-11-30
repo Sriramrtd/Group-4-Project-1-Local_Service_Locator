@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 04:44 AM
+-- Generation Time: Nov 30, 2020 at 04:43 AM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -98,7 +98,9 @@ INSERT INTO `book` (`Id`, `sname`, `email`, `phone`, `hso`, `address`, `dat`, `s
 (35, 'Ravi', 'ravibabu89.nadakuditi@gmail.com', '8790604717', '1735', 'jamac', '2020-11-23', 'Accepted', 'sam'),
 (36, 'Enterprise', 'enterprise@gmail.com', '8073334444', '725', 'James Street North Thunderbay', '2020-11-24', 'Accepted', 'Sumanth'),
 (37, 'Enterprise', 'enterprise@gmail.com', '8073334444', '727', 'Victoria Avenue', '2020-11-26', 'Accepted', 'Surya'),
-(38, 'Marnics', 'marnics@gmail.com', '8073551409', '809', 'arthur street', '2020-11-26', 'Accepted', 'Sriram');
+(38, 'Marnics', 'marnics@gmail.com', '8073551409', '809', 'arthur street', '2020-11-26', 'Accepted', 'Sriram'),
+(39, 'Enterprise', 'enterprise@gmail.com', '8073334444', '725', 'James Street South', '2020-11-30', 'Accepted', 'Sumanth'),
+(40, 'Candian Tire', 'canadiantire@gmail.com', '8073561313', '725', 'James Street South', '2020-11-30', 'Accepted', 'neymar');
 
 -- --------------------------------------------------------
 
@@ -124,7 +126,8 @@ INSERT INTO `contact` (`Id`, `name`, `phone`, `email`, `msg`) VALUES
 (4, 'dcnraju', '123467895', 'dcnraju@gmail.com', 'develop site'),
 (5, 'Pujitha', '9398564348', 'srilakshmipujitha123@gmail.com', 'Good '),
 (6, 'satish', '9648523231', 'satish@gmail.com', 'easy to access your website'),
-(7, 'chin chang', '1152384789', 'chinchang@gmail.com', 'easy to access your website i like to support your website');
+(7, 'chin chang', '1152384789', 'chinchang@gmail.com', 'easy to access your website i like to support your website'),
+(8, 'Neymar', '807556451', 'neymar@gmail.com', 'What all services do you provide in Memorial Avenue..?');
 
 -- --------------------------------------------------------
 
@@ -150,7 +153,8 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`Id`, `name`, `loc`, `phone`, `email`, `uname`, `pwd`, `photo`) VALUES
 (15, 'SriramRathod', 'Reserve', '8073561323', 'sriramrathodjee@gmail.com', 'Sriram', '123456', 'sriramprofile.PNG'),
 (13, 'SumanthReddy', 'Port Arthur', '8073560137', 'sumanth1195@gmail.com', 'Sumanth', '123456', 'sumanthprofile.PNG'),
-(14, 'SuryaNethra', 'EastEnd', '8073559413', 'suryanethra98@gmail.com', 'Surya', '123456', 'suryaprofile.PNG');
+(14, 'SuryaNethra', 'EastEnd', '8073559413', 'suryanethra98@gmail.com', 'Surya', '123456', 'suryaprofile.PNG'),
+(16, 'Neymar', 'FortWilliam', '8073551121', 'neymar@gmail.com', 'neymar', '123456', 'neymar.jfif');
 
 -- --------------------------------------------------------
 
@@ -189,7 +193,8 @@ CREATE TABLE `review` (
 INSERT INTO `review` (`Id`, `sname`, `phone`, `msg`, `rate`, `uname`, `email`) VALUES
 (9, 'Marnics', '38', 'poor servics', '1', 'Sriram', 'marnics@gmail.com'),
 (8, 'Enterprise', '37', 'very good service', '5', 'Surya', 'enterprise@gmail.com'),
-(7, 'Enterprise', '36', 'Good service', '4', 'Sumanth', 'enterprise@gmail.com');
+(7, 'Enterprise', '36', 'Good service', '4', 'Sumanth', 'enterprise@gmail.com'),
+(10, 'Candian Tire', '40', 'Good service', '4', 'neymar', 'canadiantire@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -218,7 +223,8 @@ CREATE TABLE `service` (
 
 INSERT INTO `service` (`Id`, `name`, `amt`, `phone`, `email`, `uname`, `pass`, `lat`, `log`, `loc`, `type`, `pic`) VALUES
 (26, 'Marnics', '120', '8073551409', 'marnics@gmail.com', 'Marnics', '123456', '48.4062683', '-89.3022568', 'Algoma Street', 'Mobile repairs', 'marnicsprofile.png'),
-(25, 'Enterprise', '120', '8073334444', 'enterprise@gmail.com', 'Enterprise', '123456', '48.4140538,-', '-89.2427965', 'Memorial avenue', 'Car Rental', 'enterpriseprofile.jpeg');
+(25, 'Enterprise', '120', '8073334444', 'enterprise@gmail.com', 'Enterprise', '123456', '48.4140538,-', '-89.2427965', 'Memorial avenue', 'Car Rental', 'enterpriseprofile.jpeg'),
+(27, 'Candian Tire', '30', '8073561313', 'canadiantire@gmail.com', 'canadiantire@gmail.com', 'canadiantire', '89.3131512751604', '89.3131512751604', 'Memorial avenue', 'Home Hardware', 'cad.png');
 
 --
 -- Indexes for dumped tables
@@ -280,19 +286,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `rating`
@@ -304,13 +310,13 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

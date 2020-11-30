@@ -101,7 +101,8 @@
     </div>
 
    <div class="form-group">
-        <label for="add" style="color:white;font-weight:bold">Rating</label>
+        <label for="add" style="color:white;font-weight:bold">
+        </label>
          <select class="form-control" 
         id="rate" name="rate">
             <option value="1">1</option>
